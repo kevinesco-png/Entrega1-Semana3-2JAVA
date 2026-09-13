@@ -8,7 +8,6 @@ En esta primera entrega preparé la parte que genera los archivos de prueba. El 
 Al ejecutarlo se crean seis archivos de texto en la carpeta del proyecto: `productos.txt`, `vendedores.txt` y cuatro archivos de ventas, uno por vendedor. Los datos cambian en cada ejecución, pero se mantienen relacionados: las ventas usan productos que aparecen en `productos.txt` y documentos que aparecen en `vendedores.txt`.
 
 ## Cómo probarlo
-
 1. Importar esta carpeta en Eclipse con **File > Import > Existing Projects into Workspace**.
 2. Comprobar que el proyecto use **Java 8**.
 3. Abrir `src/GenerateInfoFiles.java` y ejecutarlo con **Run As > Java Application**.
