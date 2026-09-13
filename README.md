@@ -1,4 +1,4 @@
-Entrega 1 – Semana 3
+Entrega 1:Semana 3
 Conceptos Fundamentales de Programación
 
 En esta entrega trabajé en la generación de los archivos que se usarán como datos de entrada del proyecto. La clase GenerateInfoFiles está escrita en Java 8. Al ejecutarla se crean un archivo de productos, otro de vendedores y cuatro archivos de ventas, uno para cada vendedor.
