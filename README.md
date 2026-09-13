@@ -1,4 +1,4 @@
-# Entrega 1 - Semana 3
+# Entrega 1: Semana 3
 
 **Conceptos Fundamentales de Programación**  
 **Proyecto:** Generación y clasificación de datos
