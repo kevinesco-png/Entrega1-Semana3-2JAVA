@@ -1,55 +1,29 @@
-# Entrega 1 — Semana 3
+# Entrega 1 - Semana 3
 
-**Asignatura:** Conceptos Fundamentales de Programación  
-**Actividad:** Generación y clasificación de datos  
-**Alcance de esta entrega:** generación de archivos planos de prueba con Java 8.
+**Conceptos Fundamentales de Programación**  
+**Proyecto:** Generación y clasificación de datos
 
-Este proyecto de Eclipse contiene la clase `GenerateInfoFiles`. Al ejecutarla, crea en la raíz del proyecto `productos.txt`, `vendedores.txt` y un archivo `ventas_CC_<documento>_<nombre>.txt` por vendedor. Cada ejecución reemplaza los archivos que tienen esos nombres. El programa no pide datos por teclado y muestra un mensaje de éxito o de error.
+En esta primera entrega preparé la parte que genera los archivos de prueba. El programa está hecho en Java 8 y su clase principal se llama `GenerateInfoFiles`.
 
-## Cómo abrir y ejecutar
+Al ejecutarlo se crean seis archivos de texto en la carpeta del proyecto: `productos.txt`, `vendedores.txt` y cuatro archivos de ventas, uno por vendedor. Los datos cambian en cada ejecución, pero se mantienen relacionados: las ventas usan productos que aparecen en `productos.txt` y documentos que aparecen en `vendedores.txt`.
 
-1. En Eclipse para Java Developers, seleccione **File > Import > Existing Projects into Workspace** y elija esta carpeta.
-2. Configure el JRE del proyecto como **Java 8** si Eclipse se lo solicita.
-3. Abra `src/GenerateInfoFiles.java` y seleccione **Run As > Java Application**.
-4. Actualice el proyecto en Eclipse para ver los archivos `.txt` generados.
+## Cómo probarlo
 
-También puede ejecutarse desde una terminal con Java 8, situándose en esta carpeta:
+1. Importar esta carpeta en Eclipse con **File > Import > Existing Projects into Workspace**.
+2. Comprobar que el proyecto use **Java 8**.
+3. Abrir `src/GenerateInfoFiles.java` y ejecutarlo con **Run As > Java Application**.
+4. Actualizar el proyecto con **Refresh** para ver los archivos generados.
 
-```sh
-mkdir -p bin
-javac -source 8 -target 8 -d bin src/GenerateInfoFiles.java
-java -cp bin GenerateInfoFiles
-```
+El programa no pide información por teclado. Al terminar, muestra en la consola un mensaje de éxito o de error.
 
-## Métodos exigidos
+## Qué contiene cada archivo
 
-- `createProductsFile(int productsCount)`: escribe IDs consecutivos, nombres de artículos y precios positivos.
-- `createSalesManInfoFile(int salesmanCount)`: escribe un vendedor por línea con tipo y número de documento, nombre y apellido.
-- `createSalesMenFile(int randomSalesCount, String name, long id)`: escribe la identificación del vendedor y la cantidad solicitada de ventas pseudoaleatorias.
+- `productos.txt`: identificador, nombre y precio de cada producto.
+- `vendedores.txt`: tipo y número de documento, nombre y apellido de cada vendedor.
+- `ventas_CC_...txt`: en la primera línea aparece el documento del vendedor; en las siguientes, el producto y la cantidad vendida.
 
-`main` invoca los tres métodos en el orden necesario para crear un ejemplo coherente: 8 productos, 4 vendedores y entre 1 y 6 ventas por vendedor. Los IDs de ventas corresponden a los productos y los documentos de las ventas a los vendedores. Los valores cambian entre ejecuciones. Las cantidades y los precios siempre son positivos.
+Los campos se separan con punto y coma. Por ejemplo, `1;Cuaderno;3500` indica que el producto 1 es un cuaderno de 3500 pesos. En un archivo de ventas, `1;2;` indica dos unidades del producto 1.
 
-## Formatos
+La clase incluye los tres métodos solicitados: `createProductsFile`, `createSalesManInfoFile` y `createSalesMenFile`. La ejecución de ejemplo genera 8 productos, 4 vendedores y entre 1 y 6 ventas para cada vendedor.
 
-Los archivos son texto UTF-8, sin línea de títulos y con campos separados por `;`.
-
-```text
-ventas_CC_10000001_Ana.txt
-CC;10000001
-3;5;
-1;2;
-
-vendedores.txt
-CC;10000001;Ana;Torres
-
-productos.txt
-1;Cuaderno;3500
-```
-
-Los ejemplos ilustran el formato; los datos efectivamente generados pueden variar. El precio es un número entero en pesos colombianos.
-
-## Alcance
-
-La Semana 3 solicita esencialmente la clase generadora. La lectura, clasificación y creación de reportes de vendedores y productos pertenecen a la siguiente entrega, por lo que aún no hay una segunda clase con `main`.
-
-Antes de compartir el repositorio, agregue el enlace a su entrega en la plataforma de la asignatura. Esta carpeta ya incluye la estructura de proyecto Eclipse y el código fuente necesario.
+Esta entrega se centra en **generar los archivos de entrada**. El cálculo y la clasificación de las ventas corresponden a la siguiente etapa del proyecto.
